@@ -14,6 +14,35 @@
   <header class="hero">
     <h1>Gelombang</h1>
     <p>Rangkuman fisika SMA kelas 11: dari riak air sampai sinyal WiFi, semuanya merambatkan energi.</p>
+<!-- ANIMATED WAVE HERO -->
+<div class="hero-wave" aria-hidden="true">
+  <svg viewBox="0 0 1200 180" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="heroGradient">
+        <stop offset="0%" stop-color="#35d6c3" stop-opacity=".2"/>
+        <stop offset="50%" stop-color="#35d6c3"/>
+        <stop offset="100%" stop-color="#ffd166" stop-opacity=".4"/>
+      </linearGradient>
+    </defs>
+
+    <g class="hero-wave-track">
+      <path
+        d="M0 90 C75 15 150 15 225 90 S375 165 450 90 S600 15 675 90 S825 165 900 90 S1050 15 1125 90 S1275 165 1350 90"
+        fill="none"
+        stroke="url(#heroGradient)"
+        stroke-width="4"
+      />
+
+      <path
+        d="M0 90 C75 15 150 15 225 90 S375 165 450 90 S600 15 675 90 S825 165 900 90 S1050 15 1125 90 S1275 165 1350 90"
+        transform="translate(1350 0)"
+        fill="none"
+        stroke="url(#heroGradient)"
+        stroke-width="4"
+      />
+    </g>
+  </svg>
+</div>
   </header>
 
   <nav class="top">
@@ -270,7 +299,55 @@
         </ul>
       </details>
     </section>
+<!-- SIMULASI GELOMBANG BERJALAN -->
+<section id="simulasi-berjalan">
 
+  <h2>Simulasi Gelombang Berjalan</h2>
+
+  <div class="c wave-sim-card">
+
+    <div class="wave-animation travelling-wave">
+
+      <svg viewBox="0 0 800 220"
+           preserveAspectRatio="none">
+
+        <!-- Garis setimbang -->
+        <line x1="0" y1="110" x2="800" y2="110"
+              class="equilibrium-line"/>
+
+        <!-- Gelombang -->
+        <g class="travelling-wave-track">
+
+          <path
+            d="M0 110
+               C50 30 100 30 150 110
+               S250 190 300 110
+               S400 30 450 110
+               S550 190 600 110
+               S700 30 750 110
+               S850 190 900 110"
+            class="travelling-wave-line"/>
+
+          <path
+            d="M0 110
+               C50 30 100 30 150 110
+               S250 190 300 110
+               S400 30 450 110
+               S550 190 600 110
+               S700 30 750 110
+               S850 190 900 110"
+            transform="translate(900 0)"
+            class="travelling-wave-line"/>
+
+        </g>
+
+        <!-- Penanda partikel medium -->
+        <circle cx="300" cy="110" r="8"
+                class="travelling-particle"/>
+      </svg>
+    </div>
+  </div>
+</section>
     <!-- Fase -->
     <section id="fase">
       <h2>Fase gelombang</h2>
@@ -424,7 +501,53 @@
           <span class="f">Simpul: x = (2n + 1)λ / 4</span>
         </div>
       </div>
-      <p class="hint">n = 0, 1, 2, … Cara ingat: terikat tidak bisa bergerak → simpul; bebas bergerak maksimum → perut.</p>
+        <p class="hint">n = 0, 1, 2, … Cara ingat: terikat tidak bisa bergerak → simpul; bebas bergerak maksimum → perut.</p>
+<!-- SIMULASI GELOMBANG STASIONER -->
+<div class="c wave-sim-card">
+
+  <h3>Simulasi Gelombang Stasioner</h3>
+
+  <div class="wave-animation standing-wave">
+
+    <svg viewBox="0 0 800 220"
+         preserveAspectRatio="none">
+
+      <!-- Garis setimbang -->
+      <line x1="0" y1="110" x2="800" y2="110"
+            class="equilibrium-line"/>
+
+      <!-- Gelombang stasioner -->
+      <g class="standing-wave-motion">
+
+        <path
+          d="M0 110
+             C50 30 100 30 150 110
+             S250 190 300 110
+             S400 30 450 110
+             S550 190 600 110
+             S700 30 750 110
+             S850 190 900 110"
+          class="standing-wave-line"/>
+
+      </g>
+
+      <!-- Simpul -->
+      <circle cx="0" cy="110" r="6" class="node"/>
+      <circle cx="200" cy="110" r="6" class="node"/>
+      <circle cx="400" cy="110" r="6" class="node"/>
+      <circle cx="600" cy="110" r="6" class="node"/>
+      <circle cx="800" cy="110" r="6" class="node"/>
+
+      <!-- Perut -->
+      <text x="100" y="30" class="antinode-label">Perut</text>
+      <text x="300" y="30" class="antinode-label">Perut</text>
+      <text x="500" y="30" class="antinode-label">Perut</text>
+      <text x="700" y="30" class="antinode-label">Perut</text>
+
+    </svg>
+
+  </div>
+
     </section>
 
     <!-- Gelombang pada Tali -->
@@ -541,3 +664,5 @@
 
 </body>
 </html>
+
+

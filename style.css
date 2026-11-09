@@ -43,6 +43,210 @@ body {
   font: 16px/1.65 "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
+
+
+
+
+/* =====================================
+   HERO WAVE
+===================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-wave {
+  width: min(920px, 94%);
+  height: 120px;
+  margin: 22px auto -12px;
+}
+
+.hero-wave svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-wave-track {
+  animation: heroWaveMove 12s linear infinite;
+}
+
+@keyframes heroWaveMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-1350px);
+  }
+}
+
+
+/* =====================================
+   WAVE SIMULATION CONTAINER
+===================================== */
+
+.wave-sim-card {
+  margin-top: 18px;
+}
+
+.wave-animation {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    #0c2038,
+    #102b46
+  );
+  border: 1px solid rgba(53, 214, 195, .25);
+}
+
+.wave-animation svg {
+  display: block;
+  width: 100%;
+  height: 230px;
+}
+
+.equilibrium-line {
+  stroke: rgba(255,255,255,.35);
+  stroke-width: 2;
+  stroke-dasharray: 7 7;
+}
+
+
+/* =====================================
+   TRAVELLING WAVE
+===================================== */
+
+.travelling-wave-track {
+  animation: travellingWaveMove 5s linear infinite;
+}
+
+.travelling-wave-line {
+  fill: none;
+  stroke: #35d6c3;
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 5px #35d6c3);
+}
+
+@keyframes travellingWaveMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-900px);
+  }
+}
+
+.travelling-particle {
+  fill: #ffd166;
+  stroke: white;
+  stroke-width: 2;
+  animation: particleOscillation 1.5s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: 300px 110px;
+}
+
+@keyframes particleOscillation {
+  0%, 100% {
+    transform: translateY(-35px);
+  }
+
+  50% {
+    transform: translateY(35px);
+  }
+}
+
+
+/* =====================================
+   STANDING WAVE
+===================================== */
+
+.standing-wave-motion {
+  animation: standingWaveOscillation 2s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+.standing-wave-line {
+  fill: none;
+  stroke: #35d6c3;
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 5px #35d6c3);
+}
+
+@keyframes standingWaveOscillation {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(-1);
+  }
+}
+
+
+/* =====================================
+   NODE AND ANTINODE
+===================================== */
+
+.node {
+  fill: #ffd166;
+  stroke: white;
+  stroke-width: 1.5;
+}
+
+.antinode-label {
+  fill: white;
+  font-size: 14px;
+  text-anchor: middle;
+  font-weight: bold;
+}
+
+
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 600px) {
+
+  .hero-wave {
+    height: 85px;
+  }
+
+  .wave-animation svg {
+    height: 190px;
+  }
+
+}
+
+
+/* =====================================
+   REDUCED MOTION
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-wave-track,
+  .travelling-wave-track,
+  .travelling-particle,
+  .standing-wave-motion {
+    animation: none;
+  }
+
+}
+
+
+
+
+
 /* Header & Sticky Nav */
 .hero {
   background: #0a2540;
@@ -405,3 +609,5 @@ footer {
   font-size: 14px;
   padding: 0 16px 32px;
 }
+
+
