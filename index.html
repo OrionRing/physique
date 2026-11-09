@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gelombang: Rangkuman Fisika SMA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=STIX+Two+Math&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Gelombang</h1>
+    <p>Rangkuman fisika SMA kelas 11: dari riak air sampai sinyal WiFi, semuanya merambatkan energi.</p>
+  </header>
+
+  <nav class="top">
+    <a href="#pengertian">Pengertian</a>
+    <a href="#jenis">Jenis</a>
+    <a href="#besaran">Besaran</a>
+    <a href="#grafik">Grafik</a>
+    <a href="#persamaan">Persamaan</a>
+    <a href="#fase">Fase</a>
+    <a href="#rambat">Kecepatan</a>
+    <a href="#sifat">Sifat</a>
+    <a href="#stasioner">Stasioner</a>
+    <a href="#tali">Tali</a>
+    <a href="#energi">Energi</a>
+    <a href="#rumus">Rumus</a>
+    <a href="#kuis">Kuis</a>
+  </nav>
+
+  <main>
+
+    <!-- Pengertian -->
+    <section id="pengertian">
+      <h2>Pengertian gelombang</h2>
+      <div class="c">
+        <p>Gelombang adalah <b>getaran yang merambat</b> dan membawa energi tanpa memindahkan materi secara keseluruhan.</p>
+        <img class="static-img" src="pengertian.png" alt="Titik pada tali hanya naik-turun sementara gelombang bergerak">
+        <p class="hint">Titik pada medium hanya bergetar naik-turun di sekitar posisi setimbangnya, tidak ikut berpindah bersama gelombang.</p>
+      </div>
+    </section>
+
+    <!-- Jenis-jenis -->
+    <section id="jenis">
+      <h2>Jenis-jenis gelombang</h2>
+      <p class="hint">Pilih kategori untuk melihat isinya.</p>
+      <div class="tabs">
+        <input type="radio" name="j" id="j1" checked>
+        <input type="radio" name="j" id="j2">
+        <input type="radio" name="j" id="j3">
+
+        <nav class="tl">
+          <label for="j1">Kebutuhan medium</label>
+          <label for="j2">Arah getar</label>
+          <label for="j3">Pola gelombang</label>
+        </nav>
+
+        <div class="pp">
+          <div class="sc">
+            <table>
+              <tr>
+                <th>Jenis</th>
+                <th>Pengertian</th>
+                <th>Contoh</th>
+              </tr>
+              <tr>
+                <td>Mekanik</td>
+                <td>Memerlukan medium untuk merambat.</td>
+                <td>Bunyi, gelombang tali, gelombang air.</td>
+              </tr>
+              <tr>
+                <td>Elektromagnetik</td>
+                <td>Dapat merambat tanpa medium, termasuk di ruang hampa.</td>
+                <td>Cahaya, gelombang radio, sinar-X.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="pp">
+          <div class="sc">
+            <table>
+              <tr>
+                <th>Jenis</th>
+                <th>Arah getar dan arah rambat</th>
+                <th>Contoh</th>
+              </tr>
+              <tr>
+                <td>Transversal</td>
+                <td>Getar tegak lurus arah rambat. Ciri: puncak dan lembah.</td>
+                <td>Gelombang pada tali.</td>
+              </tr>
+              <tr>
+                <td>Longitudinal</td>
+                <td>Getar sejajar arah rambat. Ciri: rapatan dan renggangan.</td>
+                <td>Bunyi di udara, rapatan pada pegas.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="pp">
+          <h3>Gelombang berjalan</h3>
+          <p>Pola gelombang merambat. Dalam model ideal tanpa redaman, amplitudonya sama di setiap posisi.</p>
+          <h3>Gelombang stasioner (berdiri)</h3>
+          <p>Terbentuk dari perpaduan dua gelombang identik yang merambat berlawanan arah, menghasilkan simpul dan perut.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Besaran -->
+    <section id="besaran">
+      <h2>Besaran-besaran gelombang</h2>
+      <div class="c">
+        <img class="static-img" src="besaran.png" alt="Diagram panjang gelombang dan amplitudo">
+      </div>
+
+      <div class="sc">
+        <table>
+          <tr>
+            <th>Besaran</th>
+            <th>Simbol</th>
+            <th>Pengertian</th>
+            <th>Satuan</th>
+          </tr>
+          <tr>
+            <td>Simpangan</td>
+            <td>y</td>
+            <td>Jarak bertanda suatu titik dari posisi setimbang.</td>
+            <td>m</td>
+          </tr>
+          <tr>
+            <td>Amplitudo</td>
+            <td>A</td>
+            <td>Besar simpangan maksimum.</td>
+            <td>m</td>
+          </tr>
+          <tr>
+            <td>Periode</td>
+            <td>T</td>
+            <td>Waktu untuk satu getaran.</td>
+            <td>s</td>
+          </tr>
+          <tr>
+            <td>Frekuensi</td>
+            <td>f</td>
+            <td>Banyaknya getaran setiap sekon.</td>
+            <td>Hz</td>
+          </tr>
+          <tr>
+            <td>Panjang gelombang</td>
+            <td>λ</td>
+            <td>Jarak terpendek antara dua titik yang sefase.</td>
+            <td>m</td>
+          </tr>
+          <tr>
+            <td>Cepat rambat</td>
+            <td>v</td>
+            <td>Jarak yang ditempuh gelombang setiap sekon.</td>
+            <td>m/s</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="g" style="margin-top: 12px">
+        <div class="c">
+          <h3>Periode dan frekuensi</h3>
+          <span class="f">T = t / n</span>
+          <span class="f">f = n / t = 1 / T</span>
+          <p class="hint">n = jumlah getaran, t = waktu total</p>
+        </div>
+        <div class="c">
+          <h3>Cepat rambat</h3>
+          <span class="f">v = λf = λ / T</span>
+        </div>
+      </div>
+
+      <details>
+        <summary>Cara menentukan satu panjang gelombang</summary>
+        <h3>Transversal</h3>
+        <ul>
+          <li>Puncak ke puncak berikutnya.</li>
+          <li>Lembah ke lembah berikutnya.</li>
+          <li>Satu bukit dan satu lembah lengkap.</li>
+        </ul>
+        <h3>Longitudinal</h3>
+        <ul>
+          <li>Pusat rapatan ke pusat rapatan berikutnya.</li>
+          <li>Pusat renggangan ke pusat renggangan berikutnya.</li>
+        </ul>
+        <p>Catatan: jarak puncak ke lembah terdekat adalah <b>λ/2</b>.</p>
+      </details>
+    </section>
+
+    <!-- Grafik -->
+    <section id="grafik">
+      <h2>Membaca grafik gelombang</h2>
+      <div class="tabs">
+        <input type="radio" name="g" id="g1" checked>
+        <input type="radio" name="g" id="g2">
+
+        <nav class="tl">
+          <label for="g1">Grafik y–x (posisi)</label>
+          <label for="g2">Grafik y–t (waktu)</label>
+        </nav>
+
+        <div class="pp">
+          <img class="static-img" src="grafik-x.png" alt="Grafik y terhadap posisi x">
+          <p>Menunjukkan bentuk gelombang <b>pada suatu saat</b>. Jarak mendatar antara dua puncak berurutan adalah <b>λ</b>; jarak vertikal dari posisi setimbang ke puncak adalah <b>A</b>.</p>
+        </div>
+
+        <div class="pp">
+          <img class="static-img" src="grafik-t.png" alt="Grafik y terhadap waktu t">
+          <p>Menunjukkan getaran <b>satu titik</b> selama selang waktu tertentu. Selang waktu antara dua puncak berurutan adalah <b>T</b>; jarak vertikal dari posisi setimbang ke puncak adalah <b>A</b>.</p>
+        </div>
+      </div>
+      <p class="c"><b>Kunci:</b> sumbu posisi (x) → cari λ; sumbu waktu (t) → cari T.</p>
+    </section>
+
+    <!-- Persamaan -->
+    <section id="persamaan">
+      <h2>Persamaan gelombang berjalan</h2>
+      <div class="c">
+        <span class="f">y = A sin(ωt − kx + φ₀)</span>
+        <div class="sc">
+          <table>
+            <tr>
+              <th>Simbol</th>
+              <th>Arti</th>
+              <th>Satuan</th>
+            </tr>
+            <tr><td>y</td><td>simpangan titik</td><td>m</td></tr>
+            <tr><td>A</td><td>amplitudo</td><td>m</td></tr>
+            <tr><td>ω</td><td>frekuensi sudut</td><td>rad/s</td></tr>
+            <tr><td>t</td><td>waktu</td><td>s</td></tr>
+            <tr><td>k</td><td>bilangan gelombang</td><td>rad/m</td></tr>
+            <tr><td>x</td><td>posisi titik</td><td>m</td></tr>
+            <tr><td>φ₀</td><td>sudut fase awal</td><td>rad</td></tr>
+          </table>
+        </div>
+        <span class="f">ω = 2πf = 2π / T</span>
+        <span class="f">k = 2π / λ</span>
+        <span class="f">v = ω / k</span>
+      </div>
+
+      <div class="g">
+        <div class="c">
+          <h3>Merambat ke x positif</h3>
+          <span class="f">y = A sin(ωt − kx + φ₀)</span>
+        </div>
+        <div class="c">
+          <h3>Merambat ke x negatif</h3>
+          <span class="f">y = A sin(ωt + kx + φ₀)</span>
+        </div>
+      </div>
+
+      <details>
+        <summary>Contoh: baca persamaan y = 0,04 sin(8πt − 2πx)</summary>
+        <ul>
+          <li>A = 0,04 m</li>
+          <li>ω = 8π rad/s → f = ω / 2π = <b>4 Hz</b></li>
+          <li>T = 1 / f = <b>0,25 s</b></li>
+          <li>k = 2π rad/m → λ = 2π / k = <b>1 m</b></li>
+          <li>v = λf = <b>4 m/s</b></li>
+          <li>Arah rambat: sumbu x positif</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Fase -->
+    <section id="fase">
+      <h2>Fase gelombang</h2>
+      <div class="c">
+        <p>Fase menunjukkan keadaan suatu titik dalam siklus getarannya. Sudut fase:</p>
+        <span class="f">θ = ωt − kx + φ₀</span>
+        <span class="f">Fase = θ / 2π</span>
+        <h3>Beda fase</h3>
+        <span class="f">Dua titik, waktu sama: |Δθ| = 2π|Δx| / λ</span>
+        <span class="f">Satu titik, dua waktu: |Δθ| = 2π|Δt| / T</span>
+      </div>
+
+      <div class="sc">
+        <table>
+          <tr>
+            <th>Kondisi</th>
+            <th>Selisih posisi</th>
+            <th>Selisih sudut fase</th>
+          </tr>
+          <tr>
+            <td>Sefase</td>
+            <td>0, λ, 2λ, …</td>
+            <td>0, 2π, 4π, …</td>
+          </tr>
+          <tr>
+            <td>Berlawanan fase</td>
+            <td>λ/2, 3λ/2, …</td>
+            <td>π, 3π, …</td>
+          </tr>
+        </table>
+      </div>
+      <p><b>Sefase:</b> simpangan dan arah gerak sama. <b>Berlawanan fase:</b> getarannya berbeda setengah siklus.</p>
+    </section>
+
+    <!-- Cepat rambat & Kecepatan getar -->
+    <section id="rambat">
+      <h2>Cepat rambat dan kecepatan getar</h2>
+      <div class="g">
+        <div class="c">
+          <h3>Cepat rambat gelombang</h3>
+          <p>Kecepatan pola gelombang merambat sepanjang medium.</p>
+          <span class="f">v = λf</span>
+        </div>
+        <div class="c">
+          <h3>Kecepatan getar partikel</h3>
+          <p>Kecepatan partikel medium bergerak di sekitar posisi setimbang.</p>
+          <span class="f">v<sub>y</sub> = Aω cos(ωt − kx + φ₀)</span>
+        </div>
+      </div>
+
+      <div class="c">
+        <span class="f">v<sub>y</sub> maks = Aω</span>
+        <span class="f">a<sub>y</sub> = −ω²y, &nbsp; a maks = Aω²</span>
+        <ul>
+          <li>Di posisi setimbang: kecepatan getar <b>maksimum</b>, percepatan <b>nol</b>.</li>
+          <li>Di simpangan maksimum: kecepatan getar <b>nol</b>, percepatan <b>maksimum</b>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Sifat-sifat (Flashcards) -->
+    <section id="sifat">
+      <h2>Sifat-sifat gelombang</h2>
+      <p class="hint">Arahkan kursor atau ketuk kartu untuk membaliknya.</p>
+      <div class="g">
+        <div class="fl" tabindex="0">
+          <div class="fi">
+            <div class="fr"><i>↩</i>Pemantulan</div>
+            <div class="fb">Gelombang kembali setelah mengenai penghalang. Sudut datang = sudut pantul terhadap garis normal.</div>
+          </div>
+        </div>
+
+        <div class="fl" tabindex="0">
+          <div class="fi">
+            <div class="fr"><i>↗</i>Pembiasan</div>
+            <div class="fb">Terjadi saat cepat rambat berubah. Frekuensi tetap; λ = v/f ikut berubah. Jika v turun, λ turun.</div>
+          </div>
+        </div>
+
+        <div class="fl" tabindex="0">
+          <div class="fi">
+            <div class="fr"><i>〰</i>Difraksi</div>
+            <div class="fb">Pembelokan di celah atau tepi penghalang. Jelas jika ukuran celah sebanding atau lebih kecil dari λ.</div>
+          </div>
+        </div>
+
+        <div class="fl" tabindex="0">
+          <div class="fi">
+            <div class="fr"><i>⊕</i>Interferensi</div>
+            <div class="fb">Perpaduan gelombang: y = y₁ + y₂. Konstruktif: Δs = nλ. Destruktif: Δs = (n + ½)λ.</div>
+          </div>
+        </div>
+
+        <div class="fl" tabindex="0">
+          <div class="fi">
+            <div class="fr"><i>▮</i>Polarisasi</div>
+            <div class="fb">Pembatasan arah getar. Hanya pada gelombang transversal, misalnya kacamata polaroid.</div>
+          </div>
+        </div>
+      </div>
+
+      <details>
+        <summary>Pantulan pada tali</summary>
+        <ul>
+          <li><b>Ujung terikat:</b> gelombang pantul berbalik (puncak jadi lembah).</li>
+          <li><b>Ujung bebas:</b> gelombang pantul tidak berbalik (puncak tetap puncak).</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Syarat interferensi dua sumber sefase</summary>
+        <p>Δs = selisih lintasan; n = 0, 1, 2, …</p>
+        <ul>
+          <li>Konstruktif (saling menguatkan): Δs = nλ</li>
+          <li>Destruktif (saling melemahkan): Δs = (n + ½)λ</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Gelombang Stasioner -->
+    <section id="stasioner">
+      <h2>Gelombang stasioner</h2>
+      <div class="c">
+        <img class="static-img" src="stasioner.png" alt="Gelombang stasioner dengan simpul dan perut">
+        <p><b>Simpul:</b> amplitudo nol, tidak bergetar. <b>Perut:</b> amplitudo maksimum.</p>
+      </div>
+
+      <div class="sc">
+        <table>
+          <tr>
+            <th>Dua titik berdekatan</th>
+            <th>Jarak</th>
+          </tr>
+          <tr><td>Simpul ke simpul</td><td>λ/2</td></tr>
+          <tr><td>Perut ke perut</td><td>λ/2</td></tr>
+          <tr><td>Simpul ke perut</td><td>λ/4</td></tr>
+        </table>
+      </div>
+
+      <div class="g" style="margin-top: 12px">
+        <div class="c">
+          <h3>Ujung terikat (simpul)</h3>
+          <p>x dari ujung terikat:</p>
+          <span class="f">Simpul: x = nλ / 2</span>
+          <span class="f">Perut: x = (2n + 1)λ / 4</span>
+        </div>
+        <div class="c">
+          <h3>Ujung bebas (perut)</h3>
+          <p>x dari ujung bebas:</p>
+          <span class="f">Perut: x = nλ / 2</span>
+          <span class="f">Simpul: x = (2n + 1)λ / 4</span>
+        </div>
+      </div>
+      <p class="hint">n = 0, 1, 2, … Cara ingat: terikat tidak bisa bergerak → simpul; bebas bergerak maksimum → perut.</p>
+    </section>
+
+    <!-- Gelombang pada Tali -->
+    <section id="tali">
+      <h2>Gelombang pada tali</h2>
+      <div class="c">
+        <span class="f">v = √(F<sub>T</sub> / μ), &nbsp; μ = m / L</span>
+        <p class="hint">F<sub>T</sub> = tegangan tali (N), μ = massa per panjang (kg/m), m = massa (kg), L = panjang (m)</p>
+        <ul>
+          <li>Tegangan lebih besar → gelombang lebih cepat.</li>
+          <li>μ lebih besar → gelombang lebih lambat.</li>
+        </ul>
+      </div>
+
+      <div class="c">
+        <h3>Kedua ujung terikat</h3>
+        <span class="f">f<sub>n</sub> = nv / (2L), &nbsp; n = 1, 2, 3, …</span>
+        <ul>
+          <li>Nada dasar: f₁ = v / (2L)</li>
+          <li>Nada atas pertama: f₂ = 2f₁</li>
+          <li>Nada atas kedua: f₃ = 3f₁</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Energi -->
+    <section id="energi">
+      <h2>Energi gelombang</h2>
+      <div class="g">
+        <div class="c">
+          <p>Untuk gelombang harmonik dengan medium dan frekuensi tetap:</p>
+          <span class="f">E ∝ A²</span>
+          <p>Amplitudo 2× → energi <b>4×</b>.</p>
+        </div>
+        <div class="c">
+          <h3>Intensitas</h3>
+          <span class="f">I = P / S</span>
+          <p class="hint">I (W/m²), P daya (W), S luas permukaan (m²)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rumus Wajib -->
+    <section id="rumus">
+      <h2>Rumus wajib</h2>
+      <div class="fm">
+        <span class="f">f = 1 / T</span>
+        <span class="f">v = λf</span>
+        <span class="f">ω = 2πf</span>
+        <span class="f">k = 2π / λ</span>
+        <span class="f">v = ω / k</span>
+        <span class="f">v = √(F<sub>T</sub> / μ)</span>
+        <span class="f">μ = m / L</span>
+      </div>
+
+      <div class="c">
+        <h3>Konsep utama</h3>
+        <ul>
+          <li>Gelombang memindahkan energi; partikel medium bergetar di sekitar posisi setimbang.</li>
+          <li>Jarak puncak ke lembah adalah 2A.</li>
+          <li>Saat pembiasan, frekuensi tetap.</li>
+          <li>Ujung terikat: pantulan terbalik; ujung bebas: tidak terbalik.</li>
+          <li>Simpul ke perut terdekat berjarak λ/4.</li>
+          <li>Cepat rambat gelombang berbeda dari kecepatan getar partikel.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Kuis Cepat -->
+    <section id="kuis">
+      <h2>Kuis cepat</h2>
+      <p class="hint">Pilih satu jawaban untuk langsung mengecek.</p>
+
+      <div class="c q">
+        <b>1. Pada gelombang stasioner, berapa jarak simpul ke perut terdekat?</b>
+        <input type="radio" name="q1" id="a1" class="ok"><label for="a1">λ/4</label>
+        <input type="radio" name="q1" id="a2" class="no"><label for="a2">λ/2</label>
+        <input type="radio" name="q1" id="a3" class="no"><label for="a3">λ</label>
+        <p class="r y">Benar! Simpul ke simpul λ/2, simpul ke perut λ/4.</p>
+        <p class="r n">Belum tepat. Coba pilihan lain.</p>
+      </div>
+
+      <div class="c q">
+        <b>2. Dari y = 0,04 sin(8πt − 2πx), berapa cepat rambat gelombang?</b>
+        <input type="radio" name="q2" id="b1" class="no"><label for="b1">2 m/s</label>
+        <input type="radio" name="q2" id="b2" class="ok"><label for="b2">4 m/s</label>
+        <input type="radio" name="q2" id="b3" class="no"><label for="b3">8 m/s</label>
+        <p class="r y">Benar! f = 4 Hz, λ = 1 m, jadi v = λf = 4 m/s.</p>
+        <p class="r n">Belum tepat. Hitung f = ω/2π dan λ = 2π/k.</p>
+      </div>
+
+      <div class="c q">
+        <b>3. Saat gelombang dibiaskan, besaran apa yang tetap?</b>
+        <input type="radio" name="q3" id="c1" class="no"><label for="c1">Panjang gelombang</label>
+        <input type="radio" name="q3" id="c2" class="no"><label for="c2">Cepat rambat</label>
+        <input type="radio" name="q3" id="c3" class="ok"><label for="c3">Frekuensi</label>
+        <p class="r y">Benar! Frekuensi ditentukan oleh sumber.</p>
+        <p class="r n">Belum tepat. Ingat siapa yang menentukan frekuensi.</p>
+      </div>
+
+      <div class="c q">
+        <b>4. Jika amplitudo menjadi 2 kali semula, energi gelombang menjadi…</b>
+        <input type="radio" name="q4" id="d1" class="no"><label for="d1">2 kali</label>
+        <input type="radio" name="q4" id="d2" class="ok"><label for="d2">4 kali</label>
+        <input type="radio" name="q4" id="d3" class="no"><label for="d3">8 kali</label>
+        <p class="r y">Benar! Energi sebanding dengan A².</p>
+        <p class="r n">Belum tepat. Energi sebanding dengan kuadrat amplitudo.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>Rangkuman gelombang fisika SMA. Semoga membantu belajarnya!</footer>
+
+</body>
+</html>
