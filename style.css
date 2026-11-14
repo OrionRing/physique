@@ -43,17 +43,29 @@ body {
   font: 16px/1.65 "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-
-
-
-
-/* =====================================
-   HERO WAVE
-===================================== */
-
+/* Header & Sticky Nav */
 .hero {
   position: relative;
   overflow: hidden;
+  background: #0a2540;
+  color: #ffffff;
+  padding: 56px 20px 44px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 8vw, 72px);
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.hero p {
+  color: #c4d3e2;
+  max-width: 540px;
+  margin: 14px auto 0;
+  font-size: 17px;
 }
 
 .hero-wave {
@@ -76,198 +88,9 @@ body {
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-1350px);
   }
-}
-
-
-/* =====================================
-   WAVE SIMULATION CONTAINER
-===================================== */
-
-.wave-sim-card {
-  margin-top: 18px;
-}
-
-.wave-animation {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 14px;
-  background: linear-gradient(
-    180deg,
-    #0c2038,
-    #102b46
-  );
-  border: 1px solid rgba(53, 214, 195, .25);
-}
-
-.wave-animation svg {
-  display: block;
-  width: 100%;
-  height: 230px;
-}
-
-.equilibrium-line {
-  stroke: rgba(255,255,255,.35);
-  stroke-width: 2;
-  stroke-dasharray: 7 7;
-}
-
-
-/* =====================================
-   TRAVELLING WAVE
-===================================== */
-
-.travelling-wave-track {
-  animation: travellingWaveMove 5s linear infinite;
-}
-
-.travelling-wave-line {
-  fill: none;
-  stroke: #35d6c3;
-  stroke-width: 4;
-  stroke-linecap: round;
-  filter: drop-shadow(0 0 5px #35d6c3);
-}
-
-@keyframes travellingWaveMove {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-900px);
-  }
-}
-
-.travelling-particle {
-  fill: #ffd166;
-  stroke: white;
-  stroke-width: 2;
-  animation: particleOscillation 1.5s ease-in-out infinite;
-  transform-box: view-box;
-  transform-origin: 300px 110px;
-}
-
-@keyframes particleOscillation {
-  0%, 100% {
-    transform: translateY(-35px);
-  }
-
-  50% {
-    transform: translateY(35px);
-  }
-}
-
-
-/* =====================================
-   STANDING WAVE
-===================================== */
-
-.standing-wave-motion {
-  animation: standingWaveOscillation 2s ease-in-out infinite;
-  transform-box: view-box;
-  transform-origin: center;
-}
-
-.standing-wave-line {
-  fill: none;
-  stroke: #35d6c3;
-  stroke-width: 4;
-  stroke-linecap: round;
-  filter: drop-shadow(0 0 5px #35d6c3);
-}
-
-@keyframes standingWaveOscillation {
-  0%, 100% {
-    transform: scaleY(1);
-  }
-
-  50% {
-    transform: scaleY(-1);
-  }
-}
-
-
-/* =====================================
-   NODE AND ANTINODE
-===================================== */
-
-.node {
-  fill: #ffd166;
-  stroke: white;
-  stroke-width: 1.5;
-}
-
-.antinode-label {
-  fill: white;
-  font-size: 14px;
-  text-anchor: middle;
-  font-weight: bold;
-}
-
-
-
-
-/* =====================================
-   RESPONSIVE
-===================================== */
-
-@media (max-width: 600px) {
-
-  .hero-wave {
-    height: 85px;
-  }
-
-  .wave-animation svg {
-    height: 190px;
-  }
-
-}
-
-
-/* =====================================
-   REDUCED MOTION
-===================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .hero-wave-track,
-  .travelling-wave-track,
-  .travelling-particle,
-  .standing-wave-motion {
-    animation: none;
-  }
-
-}
-
-
-
-
-
-/* Header & Sticky Nav */
-.hero {
-  background: #0a2540;
-  color: #ffffff;
-  padding: 56px 20px 44px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: clamp(46px, 11vw, 96px);
-  font-weight: 800;
-  line-height: 1;
-  margin: 0;
-  letter-spacing: -2.5px;
-}
-
-.hero p {
-  color: #c4d3e2;
-  max-width: 540px;
-  margin: 14px auto 0;
-  font-size: 17px;
 }
 
 nav.top {
@@ -337,7 +160,7 @@ h3 {
 
 .g {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 12px;
 }
 
@@ -354,6 +177,106 @@ h3 {
   margin: 8px 0;
 }
 
+/* Wave Simulation Containers */
+.wave-sim-card {
+  margin-top: 18px;
+}
+
+.wave-animation {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #0c2038, #102b46);
+  border: 1px solid rgba(53, 214, 195, 0.25);
+}
+
+.wave-animation svg {
+  display: block;
+  width: 100%;
+  height: 230px;
+}
+
+.equilibrium-line {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 2;
+  stroke-dasharray: 7 7;
+}
+
+.travelling-wave-track {
+  animation: travellingWaveMove 5s linear infinite;
+}
+
+.travelling-wave-line {
+  fill: none;
+  stroke: #35d6c3;
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 5px #35d6c3);
+}
+
+@keyframes travellingWaveMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-900px);
+  }
+}
+
+.travelling-particle {
+  fill: #ffd166;
+  stroke: white;
+  stroke-width: 2;
+  animation: particleOscillation 1.5s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: 300px 110px;
+}
+
+@keyframes particleOscillation {
+  0%, 100% {
+    transform: translateY(-35px);
+  }
+  50% {
+    transform: translateY(35px);
+  }
+}
+
+.standing-wave-motion {
+  animation: standingWaveOscillation 2s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+.standing-wave-line {
+  fill: none;
+  stroke: #35d6c3;
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 5px #35d6c3);
+}
+
+@keyframes standingWaveOscillation {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(-1);
+  }
+}
+
+.node {
+  fill: #ffd166;
+  stroke: white;
+  stroke-width: 1.5;
+}
+
+.antinode-label {
+  fill: white;
+  font-size: 14px;
+  text-anchor: middle;
+  font-weight: bold;
+}
+
 /* Formulas */
 .f {
   display: block;
@@ -363,18 +286,19 @@ h3 {
   padding: 8px 14px;
   border-radius: 0 10px 10px 0;
   margin: 8px 0;
+  overflow-x: auto;
 }
 
 .fm {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
   gap: 8px;
 }
 
 .fm .f {
   margin: 0;
   text-align: center;
-  font-size: 19px;
+  font-size: 18px;
   border: 2px solid var(--b);
   border-radius: 12px;
   transition: background 0.2s, color 0.2s, transform 0.15s;
@@ -610,4 +534,20 @@ footer {
   padding: 0 16px 32px;
 }
 
+@media (max-width: 600px) {
+  .hero-wave {
+    height: 85px;
+  }
+  .wave-animation svg {
+    height: 190px;
+  }
+}
 
+@media (prefers-reduced-motion: reduce) {
+  .hero-wave-track,
+  .travelling-wave-track,
+  .travelling-particle,
+  .standing-wave-motion {
+    animation: none;
+  }
+}
