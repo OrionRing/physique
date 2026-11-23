@@ -43,7 +43,6 @@ body {
   font: 16px/1.65 "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Header & Sticky Nav */
 .hero {
   position: relative;
   overflow: hidden;
@@ -119,7 +118,6 @@ nav.top a:focus-visible {
   outline: 0;
 }
 
-/* Main Content & Headings */
 main {
   max-width: 880px;
   margin: auto;
@@ -145,7 +143,6 @@ h3 {
   color: var(--a);
 }
 
-/* Cards & Grid */
 .c {
   background: var(--cd);
   border: 1px solid var(--bd);
@@ -164,7 +161,6 @@ h3 {
   margin: 0;
 }
 
-/* ==================== SVG DIAGRAMS WITH X-Y AXES ==================== */
 .svg-diagram {
   margin: 12px 0;
   background: var(--bg);
@@ -259,7 +255,6 @@ h3 {
   .svg-label-accent { fill: var(--b); }
 }
 
-/* ==================== WAVE SIMULATION (SYNCHRONIZED) ==================== */
 .wave-sim-card {
   margin-top: 18px;
 }
@@ -311,7 +306,6 @@ h3 {
   stroke-dasharray: 7 7;
 }
 
-/* 900px = 3 lambda -> 4s / 3 = 1.3333s per gelombang */
 .travelling-wave-track {
   animation: travellingWaveRight 2s linear infinite;
   will-change: transform;
@@ -339,7 +333,6 @@ h3 {
   to { transform: translateX(-900px); }
 }
 
-/* Partikel di x=300 mulai di y=110 (setimbang), bergerak turun dulu saat puncak mendekat dari kiri */
 .travelling-particle {
   fill: #ffd166;
   stroke: #ffffff;
@@ -351,19 +344,19 @@ h3 {
 @keyframes harmonicMotion {
   0% {
     transform: translateY(0px);
-    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); /* melambat menuju lembah */
+    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
   }
   25% {
-    transform: translateY(60px); /* tepat di lembah (y = 110 + 60 = 170) */
-    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33); /* mempercepat menuju setimbang */
+    transform: translateY(60px); 
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33); 
   }
   50% {
-    transform: translateY(0px); /* kecepatan maksimum di titik setimbang */
-    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); /* melambat menuju puncak */
+    transform: translateY(0px);
+    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
   }
   75% {
-    transform: translateY(-60px); /* tepat di puncak (y = 110 - 60 = 50) */
-    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33); /* mempercepat menuju setimbang */
+    transform: translateY(-60px);
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33); 
   }
   100% {
     transform: translateY(0px);
@@ -402,7 +395,7 @@ h3 {
   font-weight: 700;
 }
 
-/* ==================== MATHEMATICAL FRACTIONS & FORMULAS ==================== */
+
 .f {
   display: block;
   font: 19px/1.6 "STIX Two Math", "Cambria Math", Cambria, serif;
@@ -425,7 +418,7 @@ h3 {
   border-top: 1px dashed var(--bd);
 }
 
-/* Stacked Fraction (Pecahan Atas-Bawah) */
+
 .frac,
 .frac-inline {
   display: inline-flex;
@@ -451,7 +444,6 @@ h3 {
   font-size: 0.85em;
 }
 
-/* Akar Kuadrat (Square Root) */
 .sqrt {
   display: inline-flex;
   align-items: stretch;
@@ -496,7 +488,6 @@ h3 {
   border-top-color: rgba(10, 37, 64, 0.25);
 }
 
-/* ==================== TABLES ==================== */
 .sc {
   overflow-x: auto;
 }
@@ -535,7 +526,6 @@ ul {
   color: var(--mu);
 }
 
-/* ==================== TAB SELECTOR ==================== */
 .tabs > input {
   position: absolute;
   opacity: 0;
@@ -583,7 +573,6 @@ ul {
   color: #ffffff;
 }
 
-/* ==================== DETAILS / ACCORDIONS ==================== */
 details {
   background: var(--cd);
   border: 1px solid var(--bd);
@@ -602,7 +591,6 @@ summary {
   color: var(--a);
 }
 
-/* ==================== 3D FLASHCARDS WITH ILLUSTRATIONS ==================== */
 .fl {
   perspective: 800px;
   height: 205px;
@@ -660,7 +648,6 @@ summary {
   transform: rotateY(180deg);
 }
 
-/* ==================== QUIZ ==================== */
 .q input {
   position: absolute;
   opacity: 0;
