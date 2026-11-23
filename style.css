@@ -54,23 +54,23 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(36px, 8vw, 72px);
+  font-size: clamp(32px, 6.5vw, 60px);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.08;
   margin: 0;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
 }
 
 .hero p {
   color: #c4d3e2;
-  max-width: 540px;
+  max-width: 560px;
   margin: 14px auto 0;
   font-size: 17px;
 }
 
 .hero-wave {
   width: min(920px, 94%);
-  height: 120px;
+  height: 110px;
   margin: 22px auto -12px;
 }
 
@@ -85,12 +85,8 @@ body {
 }
 
 @keyframes heroWaveMove {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-1350px);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-1350px); }
 }
 
 nav.top {
@@ -168,16 +164,102 @@ h3 {
   margin: 0;
 }
 
-/* Static Images */
-.static-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin: 8px 0;
+/* ==================== SVG DIAGRAMS WITH X-Y AXES ==================== */
+.svg-diagram {
+  margin: 12px 0;
+  background: var(--bg);
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  padding: 10px;
 }
 
-/* Wave Simulation Containers */
+.svg-diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.axis-line {
+  stroke: var(--fg);
+  stroke-width: 2;
+}
+
+.axis-dashed {
+  stroke: var(--mu);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+}
+
+.fill-axis {
+  fill: var(--fg);
+}
+
+.curve-primary {
+  fill: none;
+  stroke: var(--a);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+
+.curve-dashed-primary {
+  fill: none;
+  stroke: var(--a);
+  stroke-width: 2;
+  stroke-dasharray: 5 5;
+  opacity: 0.65;
+}
+
+.arrow-primary {
+  stroke: var(--a);
+  stroke-width: 2;
+}
+
+.fill-primary {
+  fill: var(--a);
+}
+
+.arrow-accent {
+  stroke: #d97706;
+  stroke-width: 2;
+}
+
+.fill-accent,
+.dot-accent {
+  fill: var(--b);
+  stroke: var(--fg);
+  stroke-width: 1.5;
+}
+
+.svg-axis-title {
+  fill: var(--fg);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.svg-label {
+  fill: var(--mu);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.svg-label-primary {
+  fill: var(--a);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.svg-label-accent {
+  fill: #d97706;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+  .arrow-accent { stroke: var(--b); }
+  .svg-label-accent { fill: var(--b); }
+}
+
+/* ==================== WAVE SIMULATION (SYNCHRONIZED) ==================== */
 .wave-sim-card {
   margin-top: 18px;
 }
@@ -196,14 +278,52 @@ h3 {
   height: 230px;
 }
 
+.sim-axis {
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 1.8;
+}
+
+.sim-axis-fill {
+  fill: rgba(255, 255, 255, 0.7);
+}
+
+.sim-axis-label {
+  fill: #c4d3e2;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sim-guide {
+  stroke: rgba(255, 209, 102, 0.4);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+.sim-note {
+  fill: #ffd166;
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .equilibrium-line {
   stroke: rgba(255, 255, 255, 0.35);
   stroke-width: 2;
   stroke-dasharray: 7 7;
 }
 
+/* 900px = 3 lambda -> 4s / 3 = 1.3333s per gelombang */
 .travelling-wave-track {
-  animation: travellingWaveMove 5s linear infinite;
+  animation: travellingWaveRight 2s linear infinite;
+  will-change: transform;
+}
+
+@keyframes travellingWaveRight {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(300px);
+  }
 }
 
 .travelling-wave-line {
@@ -215,36 +335,45 @@ h3 {
 }
 
 @keyframes travellingWaveMove {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-900px);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-900px); }
 }
 
+/* Partikel di x=300 mulai di y=110 (setimbang), bergerak turun dulu saat puncak mendekat dari kiri */
 .travelling-particle {
   fill: #ffd166;
-  stroke: white;
+  stroke: #ffffff;
   stroke-width: 2;
-  animation: particleOscillation 1.5s ease-in-out infinite;
-  transform-box: view-box;
-  transform-origin: 300px 110px;
+  will-change: transform;
+  animation: harmonicMotion 2s infinite;
 }
 
-@keyframes particleOscillation {
-  0%, 100% {
-    transform: translateY(-35px);
+@keyframes harmonicMotion {
+  0% {
+    transform: translateY(0px);
+    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); /* melambat menuju lembah */
+  }
+  25% {
+    transform: translateY(60px); /* tepat di lembah (y = 110 + 60 = 170) */
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33); /* mempercepat menuju setimbang */
   }
   50% {
-    transform: translateY(35px);
+    transform: translateY(0px); /* kecepatan maksimum di titik setimbang */
+    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); /* melambat menuju puncak */
+  }
+  75% {
+    transform: translateY(-60px); /* tepat di puncak (y = 110 - 60 = 50) */
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33); /* mempercepat menuju setimbang */
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
 .standing-wave-motion {
   animation: standingWaveOscillation 2s ease-in-out infinite;
   transform-box: view-box;
-  transform-origin: center;
+  transform-origin: 400px 110px;
 }
 
 .standing-wave-line {
@@ -256,42 +385,94 @@ h3 {
 }
 
 @keyframes standingWaveOscillation {
-  0%, 100% {
-    transform: scaleY(1);
-  }
-  50% {
-    transform: scaleY(-1);
-  }
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(-1); }
 }
 
 .node {
   fill: #ffd166;
-  stroke: white;
+  stroke: #ffffff;
   stroke-width: 1.5;
 }
 
 .antinode-label {
-  fill: white;
-  font-size: 14px;
+  fill: #ffffff;
+  font-size: 13px;
   text-anchor: middle;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* Formulas */
+/* ==================== MATHEMATICAL FRACTIONS & FORMULAS ==================== */
 .f {
   display: block;
-  font: 20px/1.5 "STIX Two Math", "Cambria Math", Cambria, serif;
+  font: 19px/1.6 "STIX Two Math", "Cambria Math", Cambria, serif;
   background: var(--bg);
   border-left: 4px solid var(--a);
-  padding: 8px 14px;
+  padding: 10px 14px;
   border-radius: 0 10px 10px 0;
   margin: 8px 0;
   overflow-x: auto;
 }
 
+.f .desc {
+  display: block;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--mu);
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--bd);
+}
+
+/* Stacked Fraction (Pecahan Atas-Bawah) */
+.frac,
+.frac-inline {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 0.2em;
+  line-height: 1.08;
+}
+
+.frac > span:first-child,
+.frac-inline > span:first-child {
+  border-bottom: 1.5px solid currentColor;
+  padding: 0 0.25em 1px;
+}
+
+.frac > span:last-child,
+.frac-inline > span:last-child {
+  padding: 1px 0.25em 0;
+}
+
+.frac-inline {
+  font-size: 0.85em;
+}
+
+/* Akar Kuadrat (Square Root) */
+.sqrt {
+  display: inline-flex;
+  align-items: stretch;
+  vertical-align: middle;
+}
+
+.sqrt::before {
+  content: "√";
+  font-size: 1.35em;
+  line-height: 1;
+  margin-right: 1px;
+}
+
+.sqrt > span {
+  border-top: 1.5px solid currentColor;
+  padding: 2px 3px 0;
+}
+
 .fm {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
   gap: 8px;
 }
 
@@ -310,7 +491,12 @@ h3 {
   transform: translateY(-2px);
 }
 
-/* Tables */
+.fm .f:hover .desc {
+  color: #0a2540;
+  border-top-color: rgba(10, 37, 64, 0.25);
+}
+
+/* ==================== TABLES ==================== */
 .sc {
   overflow-x: auto;
 }
@@ -349,7 +535,7 @@ ul {
   color: var(--mu);
 }
 
-/* Tab Selector */
+/* ==================== TAB SELECTOR ==================== */
 .tabs > input {
   position: absolute;
   opacity: 0;
@@ -386,24 +572,18 @@ ul {
 }
 
 .tabs > input:nth-of-type(1):checked ~ .pp:nth-of-type(1),
-.tabs > input:nth-of-type(2):checked ~ .pp:nth-of-type(2),
-.tabs > input:nth-of-type(3):checked ~ .pp:nth-of-type(3) {
+.tabs > input:nth-of-type(2):checked ~ .pp:nth-of-type(2) {
   display: block;
 }
 
 .tabs > input:nth-of-type(1):checked ~ nav label:nth-child(1),
-.tabs > input:nth-of-type(2):checked ~ nav label:nth-child(2),
-.tabs > input:nth-of-type(3):checked ~ nav label:nth-child(3) {
+.tabs > input:nth-of-type(2):checked ~ nav label:nth-child(2) {
   background: var(--a);
   border-color: var(--a);
   color: #ffffff;
 }
 
-.tabs > input:focus-visible ~ nav label {
-  outline: 2px dashed var(--b);
-}
-
-/* Details / Accordions */
+/* ==================== DETAILS / ACCORDIONS ==================== */
 details {
   background: var(--cd);
   border: 1px solid var(--bd);
@@ -422,11 +602,12 @@ summary {
   color: var(--a);
 }
 
-/* 3D Flashcards */
+/* ==================== 3D FLASHCARDS WITH ILLUSTRATIONS ==================== */
 .fl {
   perspective: 800px;
-  height: 180px;
+  height: 205px;
   outline: 0;
+  cursor: pointer;
 }
 
 .fi {
@@ -449,6 +630,7 @@ summary {
   padding: 16px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 14px;
@@ -459,23 +641,26 @@ summary {
   background: #0a2540;
   color: #ffffff;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 17px;
+  gap: 8px;
 }
 
-.fr i {
-  font-style: normal;
-  font-size: 36px;
-  margin-bottom: 4px;
+.fc-svg {
+  width: 140px;
+  height: 75px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 4px;
 }
 
 .fb {
   background: var(--b);
   color: #0a2540;
-  font-weight: 500;
+  font-weight: 600;
   transform: rotateY(180deg);
 }
 
-/* Quiz */
+/* ==================== QUIZ ==================== */
 .q input {
   position: absolute;
   opacity: 0;
@@ -496,13 +681,14 @@ summary {
   border-color: var(--a);
 }
 
-.q input:checked + label {
-  border-color: var(--a);
-  background: #2fd0c322;
+.q input.ok:checked + label {
+  border-color: #0a8a4a;
+  background: rgba(10, 138, 74, 0.14);
 }
 
-.q input:focus-visible + label {
-  outline: 2px dashed var(--b);
+.q input.no:checked + label {
+  border-color: #d33333;
+  background: rgba(211, 51, 51, 0.14);
 }
 
 .r {
@@ -535,12 +721,8 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .hero-wave {
-    height: 85px;
-  }
-  .wave-animation svg {
-    height: 190px;
-  }
+  .hero-wave { height: 85px; }
+  .wave-animation svg { height: 190px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
